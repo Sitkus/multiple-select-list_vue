@@ -1,5 +1,5 @@
 <template>
-  <button><FontAwesomeIcon icon="trash"></FontAwesomeIcon>Clear All</button>
+  <button class="clear-button"><FontAwesomeIcon icon="trash"></FontAwesomeIcon>Clear All</button>
 </template>
 
 <script>
@@ -9,5 +9,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-//
+.clear-button {
+  //
+}
 </style>

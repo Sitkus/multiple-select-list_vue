@@ -1,5 +1,5 @@
 <template>
-  <main id="app">
+  <main class="main" id="app">
     <AddItem />
     <Cart />
     <ButtonsRow />
@@ -25,5 +25,7 @@ export default {
 </script>
 
 <style lang="scss">
-//
+.main {
+  //
+}
 </style>
