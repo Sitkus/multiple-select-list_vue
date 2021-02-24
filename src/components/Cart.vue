@@ -6,25 +6,27 @@
     </form>
 
     <ul class="items-list">
-      <li class="item">
-        Item 1 <button class="item__button"><FontAwesomeIcon icon="times"></FontAwesomeIcon></button>
-      </li>
-      <li class="item">
-        Item 2 <button class="item__button"><FontAwesomeIcon icon="times"></FontAwesomeIcon></button>
-      </li>
-      <li class="item">
-        Item 3 <button class="item__button"><FontAwesomeIcon icon="times"></FontAwesomeIcon></button>
-      </li>
-      <li class="item">
-        Item 4 <button class="item__button"><FontAwesomeIcon icon="times"></FontAwesomeIcon></button>
-      </li>
+      <CartItem :key="item.id" v-for="item in itemsOutsideOfCart || itemsAddedToCart" :item="item" />
     </ul>
   </section>
 </template>
 
 <script>
+import { CartItem } from '@/components/common';
+
 export default {
-  name: 'Cart'
+  name: 'Cart',
+  components: {
+    CartItem
+  },
+  props: {
+    itemsOutsideOfCart: {
+      type: Array
+    },
+    itemsAddedToCart: {
+      type: Array
+    }
+  }
 };
 </script>
 

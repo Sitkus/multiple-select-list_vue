@@ -1,6 +1,9 @@
 import Vue from 'vue';
+import Vuex from 'vuex';
+import uuid from 'vue-uuid';
+
 import App from './App.vue';
-import store from './store';
+import storeConfig from '@/store';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -18,6 +21,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 library.add(faPlusSquare, faTimes, faTrash, faSearch, faAngleDoubleRight, faAngleDoubleLeft, faAngleRight, faAngleLeft);
 
 Vue.component('FontAwesomeIcon', FontAwesomeIcon);
+Vue.use(Vuex);
+Vue.use(uuid);
+
+const store = new Vuex.Store(storeConfig);
 
 Vue.config.productionTip = false;
 

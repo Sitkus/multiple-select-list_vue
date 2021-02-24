@@ -1,14 +1,15 @@
 <template>
   <main class="main" id="app">
     <AddItem />
-    <Cart />
+    <Cart :items-outside-of-cart="itemsOutsideOfCart" />
     <ButtonsRow />
-    <Cart />
+    <Cart :items-added-to-cart="itemsAddedToCart" />
     <ClearAll />
   </main>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import Cart from '@/components/Cart.vue';
 import AddItem from '@/components/forms/AddItem.vue';
 import { ButtonsRow, ClearAll } from '@/components/common';
@@ -20,7 +21,8 @@ export default {
     Cart,
     ButtonsRow,
     ClearAll
-  }
+  },
+  computed: mapGetters(['itemsOutsideOfCart', 'itemsAddedToCart'])
 };
 </script>
 
