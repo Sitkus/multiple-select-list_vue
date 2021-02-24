@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  color: $orange;
+  color: $blue;
   font-size: 1.5rem;
   overflow-x: hidden;
   overflow-y: auto;
@@ -35,4 +35,12 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/*------------------------------------*\
+  #Button global styling
+\*------------------------------------*/
+
+button {
+  cursor: pointer;
 }

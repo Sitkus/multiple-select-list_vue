@@ -1,13 +1,35 @@
 <template>
-  <form class="add-item">
-    <input class="add-item__input" type="text" />
+  <form class="add-item" @submit.prevent="checkIfInputIsNotEmpty">
+    <input class="add-item__input" type="text" placeholder="Add your item" v-model.trim="description" />
     <button class="add-item__button"><FontAwesomeIcon icon="plus-square"></FontAwesomeIcon></button>
   </form>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
-  name: 'AddItem'
+  name: 'AddItem',
+  data() {
+    return {
+      description: '',
+      error: ''
+    };
+  },
+  methods: {
+    ...mapActions(['addItem']),
+    checkIfInputIsNotEmpty() {
+      if (this.description.length > 0 && this.description.length <= 160) {
+        this.error = '';
+
+        this.addItem(this.description);
+
+        this.description = '';
+      } else {
+        this.error = 'You must enter characters between 1-160';
+      }
+    }
+  }
 };
 </script>
 

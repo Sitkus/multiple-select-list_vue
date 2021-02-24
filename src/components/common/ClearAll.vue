@@ -1,10 +1,13 @@
 <template>
-  <button class="clear-button"><FontAwesomeIcon icon="trash"></FontAwesomeIcon>Clear All</button>
+  <button class="clear-button" @click="clearAllItems"><FontAwesomeIcon icon="trash"></FontAwesomeIcon>Clear All</button>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
-  name: 'ClearAll'
+  name: 'ClearAll',
+  methods: mapActions(['clearAllItems'])
 };
 </script>
 

@@ -5,7 +5,8 @@ export default {
     const newItem = {
       id: uuid.v4(),
       description,
-      addedToCart: false
+      addedToCart: false,
+      selected: false
     };
 
     commit('ADD_ITEM', newItem);
@@ -13,7 +14,13 @@ export default {
   removeItem({ commit }, id) {
     commit('REMOVE_ITEM', id);
   },
-  searchItem({ commit }, input, list) {
-    commit('FILTER_LIST', input, list);
+  // searchItem({ commit }, searchParameters) {
+  //   commit('FILTER_LIST', searchParameters);
+  // },
+  selectItem({ commit }, id) {
+    commit('SELECT_ITEM', id);
+  },
+  clearAllItems({ commit }) {
+    commit('CLEAR_ALL_ITEMS');
   }
 };

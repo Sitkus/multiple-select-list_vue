@@ -22,7 +22,7 @@ const state = {
       id: uuid.v4(),
       description: 'Just a test!',
       addedToCart: true,
-      selected: true
+      selected: false
     },
     {
       id: uuid.v4(),
@@ -34,7 +34,7 @@ const state = {
       id: uuid.v4(),
       description: 'Hello there world!',
       addedToCart: false,
-      selected: true
+      selected: false
     },
     {
       id: uuid.v4(),

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 import Cart from '@/components/Cart.vue';
 import AddItem from '@/components/forms/AddItem.vue';
 import { ButtonsRow, ClearAll } from '@/components/common';
@@ -22,6 +22,7 @@ export default {
     ButtonsRow,
     ClearAll
   },
+  methods: mapActions(['selectItem']),
   computed: mapGetters(['itemsOutsideOfCart', 'itemsAddedToCart'])
 };
 </script>
