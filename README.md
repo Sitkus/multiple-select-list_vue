@@ -8,7 +8,7 @@ You can check live project on [netlify](https://multiple-select-list-vue.netlify
 
 Main goals were to add functionality to add / remove items, singular and plural as well as move them between the lists.
 
-Project required to use Vuex and for css I chose SCSS.
+Project required to use Vuex and for css I chose SCSS, I also added persisted state plugin for Vuex to save changes to localStorage and used font awesome icons library for icons in this project.
 
 ## Project setup
 
