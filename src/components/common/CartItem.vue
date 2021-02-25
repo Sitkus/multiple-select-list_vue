@@ -54,4 +54,24 @@ export default {
     color: $green;
   }
 }
+
+@media screen and (min-width: 860px) {
+  .item {
+    transition: 100ms background-color ease-in-out;
+
+    &:hover {
+      background-color: $light-white;
+      transition: 100ms background-color ease-in-out;
+    }
+
+    &__button {
+      transition: 100ms color ease-in-out;
+
+      &:hover {
+        transition: 100ms color ease-in-out;
+        color: $red;
+      }
+    }
+  }
+}
 </style>

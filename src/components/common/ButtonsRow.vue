@@ -3,12 +3,15 @@
     <button class="buttons-row__button" @click="moveAllItemsToCart">
       <FontAwesomeIcon icon="angle-double-right"></FontAwesomeIcon>
     </button>
+
     <button class="buttons-row__button" @click="moveSelectedItemsToCart">
       <FontAwesomeIcon icon="angle-right"></FontAwesomeIcon>
     </button>
+
     <button class="buttons-row__button" @click="moveSelectedItemsFromCart">
       <FontAwesomeIcon icon="angle-left"></FontAwesomeIcon>
     </button>
+
     <button class="buttons-row__button" @click="moveAllItemsFromCart">
       <FontAwesomeIcon icon="angle-double-left"></FontAwesomeIcon>
     </button>
@@ -48,6 +51,30 @@ export default {
 
     &:last-child {
       margin-right: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .buttons-row {
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 4rem;
+
+    &__button {
+      width: 4rem;
+      padding: 1rem 0;
+      margin: 0 0 1.5rem;
+      transition: 100ms background-color ease-in-out;
+
+      &:last-child {
+        margin: 0 0;
+      }
+
+      &:hover {
+        background-color: $green;
+        transition: 100ms background-color ease-in-out;
+      }
     }
   }
 }

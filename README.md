@@ -1,6 +1,12 @@
 # Simple To-Do SAP
 
-This project was built upon given task to build reactive multiple select list without using <select> HTML tag.
+This project was built upon given task to build reactive multiple select list without using proper HTML tag.
+
+## Project goals
+
+Main goals were to add functionality to add / remove items, singular and plural as well as move them between the lists.
+
+Project required to use Vuex and for css I chose SCSS.
 
 ## Project setup
 

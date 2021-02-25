@@ -64,6 +64,7 @@ export default {
 
 <style scoped lang="scss">
 .cart {
+  flex: 1;
   margin-bottom: 3rem;
 
   &__title {
@@ -82,11 +83,19 @@ export default {
     font-family: $font-family;
     width: 100%;
     padding: 1.5rem 6rem 1.5rem 2rem;
-    border: 0;
     outline: none;
     font-size: 1.6rem;
     color: $blue;
     background-color: $light-gray;
+
+    &:focus {
+      background-color: $green;
+      color: white;
+
+      &::placeholder {
+        color: white;
+      }
+    }
 
     &::placeholder {
       color: $blue;

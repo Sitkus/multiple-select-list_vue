@@ -39,7 +39,7 @@ const state = {
     {
       id: uuid.v4(),
       description:
-        'I am a very very long text hahahahahahahha, yes indeed, so long that I cant fit in one line, so I must design items css so that it would fit any item length correclty. I am a very very long text hahahahahahahha, yes indeed, so long that I cant fit in one line, so I must design items css so that it would fit any item length correclty.',
+        "I am a very very long text hahahahahahahha, yes indeed, so long that I can't fit in one line, so I must design items css so that it would fit any item's length correctly.",
       addedToCart: true,
       selected: false
     }

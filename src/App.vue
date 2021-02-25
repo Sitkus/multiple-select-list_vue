@@ -30,7 +30,16 @@ export default {
 .main {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   padding: 2rem;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 860px) {
+  .main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 4rem;
+  }
 }
 </style>

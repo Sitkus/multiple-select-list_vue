@@ -8,9 +8,12 @@
       name="add-item"
       v-model.trim="description"
     />
+
     <button class="add-item__button" :class="{ 'add-item__button--error': error }" type="submit">
       <FontAwesomeIcon icon="plus-square"></FontAwesomeIcon>
     </button>
+
+    <p class="add-item__error" v-if="error">{{ error }}</p>
   </form>
 </template>
 
@@ -46,14 +49,12 @@ export default {
 .add-item {
   position: relative;
   flex: 0 0 100%;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 
   &__input {
     font-family: $font-family;
     width: 100%;
     padding: 1.5rem 6rem 1.5rem 2rem;
-    border: 0;
-    border-radius: 0;
     outline: none;
     font-size: 1.8rem;
     color: white;
@@ -85,7 +86,6 @@ export default {
     transform: translateY(-50%);
     background: none;
     outline: none;
-    border: 0;
     font-size: 2.4rem;
     color: white;
 
@@ -96,6 +96,33 @@ export default {
 
   &__button--error:focus {
     color: white;
+  }
+
+  &__error {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: $red;
+    color: white;
+    z-index: 10;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .add-item {
+    margin-bottom: 10rem;
+
+    &__button {
+      transition: 100ms color ease-in-out;
+
+      &:hover {
+        transition: 100ms color ease-in-out;
+        color: $green;
+      }
+    }
   }
 }
 </style>

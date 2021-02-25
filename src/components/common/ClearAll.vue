@@ -18,8 +18,6 @@ export default {
   font-family: $font-family;
   width: 100%;
   padding: 1.5rem 0;
-  border: 0;
-  outline: none;
   font-size: 1.6rem;
   color: white;
   background-color: $blue;
@@ -28,6 +26,17 @@ export default {
   &__icon {
     color: white;
     margin-right: 1rem;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .clear-button {
+    transition: 100ms background-color ease-in-out;
+
+    &:hover {
+      background-color: $red;
+      transition: 100ms background-color ease-in-out;
+    }
   }
 }
 </style>
