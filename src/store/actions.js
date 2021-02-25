@@ -20,7 +20,7 @@ export default {
   moveAllItemsFromCart({ commit }) {
     commit('MOVE_ALL_ITEMS_FROM_CART');
   },
-  // searchItem({ commit }, searchParameters) {
+  // searchForItems({ commit }, searchParameters) {
   //   commit('FILTER_LIST', searchParameters);
   // },
   selectItem({ commit }, id) {

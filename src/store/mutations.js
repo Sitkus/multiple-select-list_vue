@@ -6,6 +6,7 @@ export default {
     state.items = state.items.map((item) => {
       if (!item.addedToCart) {
         item.addedToCart = true;
+        item.selected = false;
       }
 
       return item;
@@ -18,13 +19,30 @@ export default {
     state.items = state.items.map((item) => {
       if (item.addedToCart) {
         item.addedToCart = false;
+        item.selected = false;
       }
 
       return item;
     });
   },
-  // FILTER_LIST: (state, { items, input }) => {
-  //   state.items = items.filter((item) => item.description.toLowerCase().includes(input.toLowerCase()));
+  // FILTER_LIST: (state, { input, list }) => {
+  //   if (list === 'itemsOutsideOfCart') {
+  //     state.items = state.items.map((item) => {
+  //       if (!item.addedToCart && item.description.toLowerCase().includes(input.toLowerCase())) {
+  //         item.filter = false;
+  //       }
+
+  //       return item;
+  //     });
+  //   } else {
+  //     state.items = state.items.map((item) => {
+  //       if (item.addedToCart && item.description.toLowerCase().includes(input.toLowerCase())) {
+  //         item.filter = false;
+  //       }
+
+  //       return item;
+  //     });
+  //   }
   // },
   SELECT_ITEM: (state, id) => {
     state.items = state.items.map((item) => {

@@ -20,10 +20,9 @@ export default {
     ...mapActions(['addItem']),
     checkIfInputIsNotEmpty() {
       if (this.description.length > 0 && this.description.length <= 160) {
-        this.error = '';
-
         this.addItem(this.description);
 
+        this.error = '';
         this.description = '';
       } else {
         this.error = 'You must enter characters between 1-160';

@@ -1,10 +1,10 @@
 <template>
   <section class="cart">
-    <input class="cart__input" type="text" v-model.trim="searchTerm" @input="checkIfInputIsNotEmpty" />
+    <input class="cart__input" type="text" v-model.trim="searchTerm" />
     <button class="cart__search-button"><FontAwesomeIcon icon="search"></FontAwesomeIcon></button>
 
     <ul class="items-list">
-      <CartItem :key="item.id" v-for="item in itemsOutsideOfCart || itemsAddedToCart" :item="item" />
+      <CartItem :key="item.id" v-for="item in filterCurrentList" :item="item" />
     </ul>
 
     <p v-if="error">{{ error }}</p>
@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       searchTerm: '',
-      error: ''
+      error: false
     };
   },
   props: {
@@ -34,21 +34,18 @@ export default {
       type: Array
     }
   },
-  methods: {
-    ...mapActions(['searchItem']),
-    checkIfInputIsNotEmpty() {
-      if (this.searchTerm.length > 0) {
-        this.error = '';
+  methods: mapActions(['searchForItems']),
+  computed: {
+    filterCurrentList: function() {
+      if (this.itemsOutsideOfCart !== undefined) {
+        return this.itemsOutsideOfCart.filter((item) =>
+          item.description.toLowerCase().includes(this.searchTerm.toLowerCase())
+        );
       } else {
-        this.error = 'You must enter characters between 1-20';
+        return this.itemsAddedToCart.filter((item) =>
+          item.description.toLowerCase().includes(this.searchTerm.toLowerCase())
+        );
       }
-
-      this.filterItems();
-    },
-    filterItems() {
-      // this.currentList = this.listToFilter.filter((item) =>
-      //   item.description.toLowerCase().includes(this.searchTerm.toLowerCase())
-      // );
     }
   }
 };
