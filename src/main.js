@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import uuid from 'vue-uuid';
+import createPersistedState from 'vuex-persistedstate';
 
 import App from './App.vue';
 import storeConfig from '@/store';
@@ -24,7 +25,10 @@ Vue.component('FontAwesomeIcon', FontAwesomeIcon);
 Vue.use(Vuex);
 Vue.use(uuid);
 
-const store = new Vuex.Store(storeConfig);
+const store = new Vuex.Store({
+  ...storeConfig,
+  plugins: [createPersistedState()]
+});
 
 Vue.config.productionTip = false;
 

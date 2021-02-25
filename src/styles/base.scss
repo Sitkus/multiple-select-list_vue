@@ -11,7 +11,7 @@
 }
 
 html {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-family;
   font-size: 10px;
   background-color: white;
   -webkit-text-size-adjust: 100%;
@@ -23,7 +23,8 @@ html {
 
 body {
   color: $blue;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  line-height: 1.4;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -43,4 +44,12 @@ a {
 
 button {
   cursor: pointer;
+}
+
+/*------------------------------------*\
+  #Input global styling
+\*------------------------------------*/
+
+input {
+  -webkit-appearance: none;
 }

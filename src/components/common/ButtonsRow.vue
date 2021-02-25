@@ -16,7 +16,8 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions } from 'vuex';
+
 export default {
   name: 'ButtonsRow',
   methods: mapActions([
@@ -24,15 +25,30 @@ export default {
     'moveSelectedItemsToCart',
     'moveSelectedItemsFromCart',
     'moveAllItemsFromCart'
-  ]),
-  computed: mapGetters(['itemsOutsideOfCart', 'itemsAddedToCart'])
+  ])
 };
 </script>
 
 <style scoped lang="scss">
 .buttons-row {
+  display: flex;
+  margin: 0 auto 3rem;
+
   &__button {
-    //
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5rem;
+    width: 5rem;
+    padding: 1.5rem 0;
+    font-size: 1.6rem;
+    background-color: $blue;
+    border: 0;
+    color: white;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 </style>

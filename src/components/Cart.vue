@@ -1,13 +1,21 @@
 <template>
   <section class="cart">
-    <input class="cart__input" type="text" v-model.trim="searchTerm" />
-    <button class="cart__search-button"><FontAwesomeIcon icon="search"></FontAwesomeIcon></button>
+    <h1 class="cart__title">{{ cartName }}</h1>
+
+    <div class="search">
+      <input
+        class="search__input"
+        type="text"
+        placeholder="Search for something"
+        name="search"
+        v-model.trim="searchTerm"
+      />
+      <FontAwesomeIcon class="search__icon" icon="search"></FontAwesomeIcon>
+    </div>
 
     <ul class="items-list">
       <CartItem :key="item.id" v-for="item in filterCurrentList" :item="item" />
     </ul>
-
-    <p v-if="error">{{ error }}</p>
   </section>
 </template>
 
@@ -22,11 +30,14 @@ export default {
   },
   data() {
     return {
-      searchTerm: '',
-      error: false
+      searchTerm: ''
     };
   },
   props: {
+    cartName: {
+      type: String,
+      required: true
+    },
     itemsOutsideOfCart: {
       type: Array
     },
@@ -53,23 +64,52 @@ export default {
 
 <style scoped lang="scss">
 .cart {
-  //
+  margin-bottom: 3rem;
+
+  &__title {
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.search {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+
   &__input {
-    //
+    font-family: $font-family;
+    width: 100%;
+    padding: 1.5rem 6rem 1.5rem 2rem;
+    border: 0;
+    outline: none;
+    font-size: 1.6rem;
+    color: $blue;
+    background-color: $light-gray;
+
+    &::placeholder {
+      color: $blue;
+    }
   }
 
-  &__search-button {
-    //
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    background: none;
+    outline: none;
+    border: 0;
+    font-size: 2rem;
+    color: white;
   }
 }
 
 .items-list {
-  //
-}
-
-.item {
-  &__button {
-    //
-  }
+  border: 0.2rem solid $light-gray;
+  height: 20rem;
+  max-height: 20rem;
+  overflow-y: scroll;
 }
 </style>

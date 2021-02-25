@@ -34,15 +34,24 @@ export default {
 
 <style scoped lang="scss">
 .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
   user-select: none;
+  padding: 1rem 1.5rem;
 
   &__button {
-    //
+    background: none;
+    border: 0;
+    margin-left: 1.5rem;
+    font-size: 1.6rem;
+    color: $blue;
   }
 
   &--selected {
-    background-color: blue;
+    background-color: $light-gray;
+    color: $green;
   }
 }
 </style>

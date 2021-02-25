@@ -11,20 +11,17 @@ export default {
 
     commit('ADD_ITEM', newItem);
   },
-  moveAllItemsToCart({ commit }) {
-    commit('MOVE_ALL_ITEMS_TO_CART');
-  },
   removeItem({ commit }, id) {
     commit('REMOVE_ITEM', id);
   },
-  moveAllItemsFromCart({ commit }) {
-    commit('MOVE_ALL_ITEMS_FROM_CART');
-  },
-  // searchForItems({ commit }, searchParameters) {
-  //   commit('FILTER_LIST', searchParameters);
-  // },
   selectItem({ commit }, id) {
     commit('SELECT_ITEM', id);
+  },
+  moveAllItemsToCart({ commit }) {
+    commit('MOVE_ALL_ITEMS_TO_CART');
+  },
+  moveAllItemsFromCart({ commit }) {
+    commit('MOVE_ALL_ITEMS_FROM_CART');
   },
   moveSelectedItemsToCart({ commit }) {
     commit('MOVE_SELECTED_ITEMS_TO_CART');
