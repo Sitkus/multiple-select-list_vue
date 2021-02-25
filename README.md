@@ -1,6 +1,8 @@
-# Simple To-Do SAP
+# Multiple Select List
 
 This project was built upon given task to build reactive multiple select list without using proper HTML tag.
+
+You can check live project on [netlify](https://multiple-select-list-vue.netlify.app)
 
 ## Project goals
 
